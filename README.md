@@ -1,0 +1,3 @@
+# JAVA 
+ javac *.java 
+ java *
