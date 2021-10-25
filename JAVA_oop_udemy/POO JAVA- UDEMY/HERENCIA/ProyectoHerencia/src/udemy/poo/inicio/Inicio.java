@@ -8,6 +8,7 @@ package udemy.poo.inicio;
 import javax.swing.JOptionPane;
 import udemy.poo.codigo.Elipse;
 import udemy.poo.codigo.ElipseDos;
+import udemy.poo.codigo.ElipseImplements;
 import udemy.poo.codigo.Empleado;
 import udemy.poo.codigo.JefeDeArea;
 import udemy.poo.codigo.Rectangulo;
@@ -22,6 +23,7 @@ public class Inicio {
         Rectangulo rec = new Rectangulo(4, 4);
         Empleado emp= new Empleado("JEff", 5000);
         ElipseDos el= new ElipseDos(2, 3, 2, 3);
+        ElipseImplements elI= new ElipseImplements(2, 3);
         
         
         JefeDeArea jfa= new JefeDeArea("JEff", 5000);
@@ -31,7 +33,8 @@ public class Inicio {
                 emp.incrementoSueldo()+ "\n Sueldo Jefe de Area" + jfa.incrementoSueldo());
         
         JOptionPane.showMessageDialog(null, "Area d Elipse (abstact):"+ 
-                elip.area()+ "\n Area de Elipse (normal): " + el.area());
+                elip.area()+ "\n Area de Elipse (normal): " + el.area()
+                + "\n Area de Elipse (Interface): " + elI.area());
         
     }
 }
