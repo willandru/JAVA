@@ -32,8 +32,12 @@ public class Marco extends JFrame{
         this.setTitle("PROGRAMACION CON SWING");
         
         //Agregar la lamina
-        Lamina lamina= new Lamina(new Dimension(anchura/2 , altura/2));
-        this.add(lamina);
+        //Lamina lamina= new Lamina(new Dimension(anchura/2 , altura/2));
+        //this.add(lamina);
+        
+        //Agregar eventos ~ oeynte al JFrame
+        EventosVentana oyente= new EventosVentana();
+        this.addWindowListener(oyente);
         
     }
    
