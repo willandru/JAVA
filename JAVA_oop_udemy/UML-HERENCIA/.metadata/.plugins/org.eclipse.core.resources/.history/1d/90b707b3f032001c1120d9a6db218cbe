@@ -1,0 +1,17 @@
+
+public class VideoGame extends Game {
+	String platform;
+VideoGame(){
+	System.out.println("Constructor VideoGame()");
+}
+VideoGame(String plat){
+	System.out.println("Constructor VideoGame(String)");
+}
+
+public void getPlatform() {
+	System.out.println("Metodo getPlatform() from VideoGame");
+};
+
+}
+
+

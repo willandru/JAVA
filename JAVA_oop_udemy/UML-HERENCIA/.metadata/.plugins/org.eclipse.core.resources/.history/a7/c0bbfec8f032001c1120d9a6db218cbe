@@ -1,0 +1,17 @@
+
+public class Game extends Item{
+	int numberOfPlayers;
+	
+	Game(){
+		System.out.println("Constructor Game()");
+	}
+
+	Game(int nP){
+
+	System.out.println("Constructor Game(int)");
+	}
+	public void getNumberOfPlayers() {
+		System.out.println("Metodo getNumberOfPlayers() from Game");
+	}
+	
+}
