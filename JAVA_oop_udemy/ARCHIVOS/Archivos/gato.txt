@@ -1,0 +1,3 @@
+hola, gato, 11
+aca, tengo, 22
+mama, tengo, 24

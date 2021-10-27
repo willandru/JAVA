@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package udemy.poo.inicio;
+package udemy.poo.codigo;
 
 /**
  *
  * @author kaliw
  */
-public class FiguraDos {
-    
+public interface FiguraInterface {
+    public double area();
+    public double perimetro();
 }
