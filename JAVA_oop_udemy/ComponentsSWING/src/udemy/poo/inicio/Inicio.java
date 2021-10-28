@@ -5,12 +5,16 @@
  */
 package udemy.poo.inicio;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import udemy.poo.codigo.FondoImagen;
 
@@ -26,7 +30,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
-        this.setResizable(true);
+        this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setTitle("Programación con Swing - Components");
         this.addWindowListener(new WindowAdapter() {
@@ -64,6 +68,7 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel1 = new FondoImagen(this);
         tiempo = new javax.swing.JLabel();
+        messageDialog = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,20 +76,33 @@ public class Inicio extends javax.swing.JFrame {
         tiempo.setForeground(new java.awt.Color(238, 238, 238));
         tiempo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
+        messageDialog.setText("MessageDialog");
+        messageDialog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                messageDialogActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(321, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(messageDialog, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(tiempo)
-                .addGap(0, 370, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(messageDialog)
+                .addGap(0, 317, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -100,6 +118,12 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void messageDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messageDialogActionPerformed
+        // TODO add your handling code here:
+        Image imagen= Toolkit.getDefaultToolkit().getImage(getClass().getResource("/udemy/poo/recursos/icono.png"));
+        JOptionPane.showMessageDialog(rootPane, "Contenido del mensaje", "Titulo panel", JOptionPane.INFORMATION_MESSAGE, new ImageIcon(imagen));
+    }//GEN-LAST:event_messageDialogActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +157,7 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton messageDialog;
     private javax.swing.JLabel tiempo;
     // End of variables declaration//GEN-END:variables
 }
