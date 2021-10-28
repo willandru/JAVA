@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
+import udemy.poo.codigo.FondoImagen;
 
 /**
  *
@@ -25,7 +26,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
-        this.setResizable(false);
+        this.setResizable(true);
         this.setLocationRelativeTo(this);
         this.setTitle("Programación con Swing - Components");
         this.addWindowListener(new WindowAdapter() {
@@ -61,12 +62,13 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new FondoImagen(this);
         tiempo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tiempo.setFont(new java.awt.Font("Purisa", 3, 24)); // NOI18N
+        tiempo.setForeground(new java.awt.Color(238, 238, 238));
         tiempo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
