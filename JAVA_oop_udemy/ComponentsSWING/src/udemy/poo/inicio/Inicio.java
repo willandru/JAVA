@@ -30,7 +30,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
-        this.setResizable(false);
+        this.setResizable(true);
         this.setLocationRelativeTo(this);
         this.setTitle("Programación con Swing - Components");
         this.addWindowListener(new WindowAdapter() {
@@ -66,6 +66,7 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new FondoImagen(this);
         tiempo = new javax.swing.JLabel();
         messageDialog = new javax.swing.JButton();
@@ -102,7 +103,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(tiempo)
                 .addGap(28, 28, 28)
                 .addComponent(messageDialog)
-                .addGap(0, 317, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,6 +157,7 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton messageDialog;
     private javax.swing.JLabel tiempo;

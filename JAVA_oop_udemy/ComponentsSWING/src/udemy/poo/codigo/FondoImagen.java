@@ -24,7 +24,7 @@ public class FondoImagen extends JPanel{
          try{
     tracker= new MediaTracker(componente);
              Toolkit hr = Toolkit.getDefaultToolkit();
-             imagen= hr.getImage(getClass().getResource("/udemy/poo/recursos/DaytoNight.gif"));
+             imagen= hr.getImage(getClass().getResource("/udemy/poo/recursos/kali.gif"));
              tracker.addImage(imagen, 1);
              tracker.waitForAll();
 }catch(InterruptedException e){
