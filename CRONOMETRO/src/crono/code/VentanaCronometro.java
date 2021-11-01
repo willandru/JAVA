@@ -49,7 +49,7 @@ public class VentanaCronometro extends JFrame implements ActionListener{
 		
 		btnIniciar= new JButton("Inicia");
 		btnIniciar.setBounds(119,54,89,23);
-		btnIniciar.addActionListener(this);
+		//btnIniciar.addActionListener(this);
 		getContentPane().add(btnIniciar);
 		
 		btnDetener= new JButton("Para");

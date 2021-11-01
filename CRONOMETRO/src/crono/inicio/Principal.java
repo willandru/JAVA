@@ -5,6 +5,7 @@
  */
 package crono.inicio;
 
+import crono.code.Splash;
 import crono.code.VentanaCronometro;
 
 /**
@@ -13,6 +14,11 @@ import crono.code.VentanaCronometro;
  */
 public class Principal {
     public static void main(String[] args) {
+        
+        
+        Splash miSplash= new Splash();
+        miSplash.setVisible(true);
+        
 	VentanaCronometro miVentana= new VentanaCronometro();
 	miVentana.setVisible(true);
 	
