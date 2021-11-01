@@ -5,8 +5,18 @@
  */
 package dataSaving.code;
 
+import dataSaving.data.DataStorage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -85,7 +95,22 @@ public class Main {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                
+                try {
+                    FileOutputStream fos = new FileOutputStream("save.dat");
+                    BufferedOutputStream bos = new BufferedOutputStream(fos);
+                    ObjectOutputStream oos = new ObjectOutputStream(bos);
+                    
+                    DataStorage ds = new DataStorage();
+                    ds.pName= playerName;
+                    ds.pLevel= playerLevel;
+                    ds.pHP= playerHP;
+                    
+                    oos.writeObject(ds);
+                    oos.close();
+                    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         window.add(save);
@@ -97,12 +122,30 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent ae) {
                
+                try {
+              
+                FileInputStream fis= new FileInputStream("save.dat");
+                BufferedInputStream bis = new BufferedInputStream(fis);
+                ObjectInputStream ois= new ObjectInputStream(bis);  
+                 DataStorage ds= (DataStorage) ois.readObject();
+                 playerName= ds.pName;
+                 playerLevel= ds.pLevel;
+                 playerHP= ds.pHP;
+                 ois.close();
+                 
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    }catch (IOException e) {
+                    e.printStackTrace();}
+                
+                updateText();
             }
         });
         window.add(load);
         
         window.setVisible(true);
         updateText();
+        
     }
     
     private void updateText(){
