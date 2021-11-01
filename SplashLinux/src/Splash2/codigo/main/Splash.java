@@ -10,14 +10,22 @@ package Splash2.codigo.main;
  *
  * @author kaliw
  */
-public class Splash extends javax.swing.JFrame {
+import java.util.logging.Level;
+import java.util.logging.Logger;
+public class Splash extends javax.swing.JFrame implements Runnable{
 
+    
+    private Thread tiempo= null;
     /**
      * Creates new form Splash
      */
     public Splash() {
         initComponents();
         this.setLocationRelativeTo(null);
+        tiempo= new Thread(this);
+        tiempo.start();
+       
+      
         
     }
 
@@ -122,4 +130,20 @@ public class Splash extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+         Principal p=new Principal();
+        while(tiempo != null){
+            try {
+                Thread.sleep(5000);
+                this.dispose();
+                p.setVisible(true);
+                //Thread.sleep(2000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Splash.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                }
+        tiempo=null;
+}
 }
